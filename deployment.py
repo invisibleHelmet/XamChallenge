@@ -29,7 +29,7 @@ print "Cloning git repository......."
 if not osCall("sudo git clone https://github.com/paypal/rest-api-sample-app-php.git"): print("Clone successful.")
 
 print "Changing application root directory permissions......."
-if not osCall("sudo chmod 777 rest-api-sif not osCall("echo mysql-server mysql-server/root_password password root | sudo debconf-set-selections"): print("Set password.")if not osCall("echo mysql-server mysql-server/root_password password root | sudo debconf-set-selections"): print("Set password.")if not osCall("echo mysql-server mysql-server/root_password password root | sudo debconf-set-selections"): print("Set password.")ample-app-php"): print("permission change successful.")
+if not osCall("sudo chmod 777 rest-api-sample-app-php"): print("permission change successful.")
 
 print "Switching directory......."
 if not osCall("cd rest-api-sample-app-php"): print("Switched directory.")
