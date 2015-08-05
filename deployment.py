@@ -38,7 +38,7 @@ print "Reinstalling curl......."
 if not osCall("sudo apt-get -y install php5-curl"): print("Installation successful.")
 
 print "Calling Composer update......."
-if not osCall("sudo php /var/www/html/rest-api-sample-app-php/composer.phar update"): print("Update successful.")
+if not osCall("cd /var/www/html/rest-api-sample-app-php/ && sudo php /var/www/html/rest-api-sample-app-php/composer.phar update"): print("Update successful.")
 
 print "Logging into mysql and creating database......."
 if not osCall("mysql --host=localhost --user=root --password=root -e 'CREATE DATABASE paypal_pizza_app;'"): print("Database created.")
