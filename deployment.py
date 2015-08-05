@@ -29,13 +29,13 @@ print "Cloning git repository......."
 if not osCall("sudo git clone https://github.com/paypal/rest-api-sample-app-php.git /var/www/html"): print("Clone successful.")
 
 print "Changing application root directory permissions......."
-if not osCall("sudo chmod 777 /var/www/html/rest-api-sample-app-php"): print("permission change successful.")
+if not osCall("sudo chmod 777 /var/www/html"): print("permission change successful.")
 
 #print "Switching directory......."
 #if not osCall("cd rest-api-sample-app-php"): print("Switched directory.")
 
 print "Installing Composer......."
-if not osCall("cd /var/www/html/rest-api-sample-app-php && sudo curl -sS https://getcomposer.org/installer | php"): print("Installed Composer.")
+if not osCall("cd /var/www/html && sudo curl -sS https://getcomposer.org/installer | php"): print("Installed Composer.")
 
 print "Updating Packages......."
 if not osCall("sudo apt-get -y update"): print("Packages updated.")
@@ -44,7 +44,7 @@ print "Reinstalling curl......."
 if not osCall("sudo apt-get -y install php5-curl"): print("Installation successful.")
 
 print "Calling Composer update......."
-if not osCall("sudo php /var/www/html/rest-api-sample-app-php/composer.phar update"): print("Update successful.")
+if not osCall("sudo php /var/www/html/composer.phar update"): print("Update successful.")
 
 print "Logging into mysql......."
 if not osCall("mysql --host=localhost --user=root --password=root"): print("Logged in.")
@@ -56,5 +56,5 @@ print "Exit mysql......."
 if not osCall("CREATE DATABASE paypal_pizza_app;"): print("Exited.")
 
 print "Generating Tables in database......."
-if not osCall("php /var/www/html/rest-api-sample-app-php/install/create_tables.php"): print("Tables created.")
+if not osCall("php /var/www/html/install/create_tables.php"): print("Tables created.")
 
